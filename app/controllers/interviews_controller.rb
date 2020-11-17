@@ -18,4 +18,13 @@ class InterviewsController < ApplicationController
   def index
     @interviews = Interview.all
   end
+
+private
+
+  def interview_params
+    params.require(:interview).permit(:open_date, :final_date)
+  end
 end
+
+
+

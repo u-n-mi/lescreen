@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_114823) do
+ActiveRecord::Schema.define(version: 2020_11_17_184725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_114823) do
   end
 
   create_table "interviews", force: :cascade do |t|
-    t.integer "recruiter_id"
+    t.integer "user_id"
     t.integer "candidate_id"
     t.integer "open_date"
     t.integer "final_date"
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(version: 2020_11_17_114823) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "video_id"
+    t.index ["video_id"], name: "index_reviews_on_video_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -69,9 +78,12 @@ ActiveRecord::Schema.define(version: 2020_11_17_114823) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.integer "interviews_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "interview_id"
+    t.index ["interview_id"], name: "index_videos_on_interview_id"
   end
 
+  add_foreign_key "reviews", "videos"
+  add_foreign_key "videos", "interviews"
 end
