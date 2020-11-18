@@ -1,5 +1,11 @@
 class VideosController < ApplicationController
+
+  def index
+    @videos = Video.all
+  end
+
   def new
+    @interview = Interview.find(params[:interview_id])
     @video = Video.new
   end
 
@@ -8,17 +14,14 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     @video.interview = @interview
     if @video.save
-      redirect_to interview_video_path(@interview, @video.id)
+      redirect_to interview_video_path(@interview.id, @video.id)
     else
       render 'new'
     end
   end
 
-  def index
-    @videos = Video.all
-  end
-
   def show
+    @interview = Interview.find(params[:interview_id])
     @video = Video.find(params[:id])
     @review = Review.new
   end
@@ -26,6 +29,7 @@ class VideosController < ApplicationController
 private
 
   def video_params
-    params.require(:video).permit(:interview_id)
+    params.require(:video).permit(:name)
   end
 end
+

@@ -10,58 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_184725) do
+ActiveRecord::Schema.define(version: 2020_11_18_172458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "candidates", force: :cascade do |t|
-    t.integer "videos_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "interviews", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "candidate_id"
-    t.integer "open_date"
-    t.integer "final_date"
+    t.datetime "open_date"
+    t.datetime "final_date"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "notifications", force: :cascade do |t|
-    t.integer "recruiter_id"
-    t.integer "video_id"
-    t.string "open"
-    t.string "from"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.integer "interviews_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "recruiters", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "company_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_interviews_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
     t.integer "rating"
+    t.text "comment"
+    t.bigint "video_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "video_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
     t.index ["video_id"], name: "index_reviews_on_video_id"
   end
 
@@ -78,12 +48,15 @@ ActiveRecord::Schema.define(version: 2020_11_17_184725) do
   end
 
   create_table "videos", force: :cascade do |t|
+    t.string "name"
+    t.bigint "interview_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "interview_id"
     t.index ["interview_id"], name: "index_videos_on_interview_id"
   end
 
+  add_foreign_key "interviews", "users"
+  add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "videos"
   add_foreign_key "videos", "interviews"
 end

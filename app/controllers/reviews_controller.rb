@@ -1,11 +1,22 @@
 class ReviewsController < ApplicationController
+
+  def new
+    @interview = Interview.find(params[:interview_id])
+    @video = Video.find(params[:video_id])
+    @video.interview = @interview
+    @review.video = @video
+    @review = Review.new
+  end
+
   def create
     @interview = Interview.find(params[:interview_id])
     @video = Video.find(params[:video_id])
+    @video.interview = @interview
     @review = Review.new(review_params)
     @review.video = @video
+    @review.user = current_user
     if @review.save
-      redirect_to interview_video_reviews_path(@interview, @video)
+      redirect_to interview_video_path(@interview.id, @video.id)
     else
       render "videos/show"
     end
@@ -14,6 +25,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :content, :video_id, :interview_id)
+    params.require(:review).permit(:rating, :comment)
   end
 end
