@@ -18,9 +18,8 @@ maria.save!
 
 # Interview
 puts 'Creating Interviews'
-one = Interview.new(open_date: "19/11/2020", final_date: "25/11/2020", user: maria)
-one.save!
-
+one = Interview.create(open_date: "19/11/2020", final_date: "25/11/2020", user: maria)
+two = Interview.create(open_date: "19/11/2020", final_date: "25/11/2020", user: maria)
 # Videos
 puts 'Creating Videos'
 video_one = Video.new(name: "name1", interview: one)

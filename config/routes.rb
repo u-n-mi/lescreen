@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get 'dashboard', to: 'pages#dashboard'
+  get 'dashboard', to: 'users#dashboard'
+  get 'calendar', to: 'pages#calendar'
+  get 'videos', to: 'pages#videos'
+  get 'settings', to: 'pages#settings'
   resources :interviews, only: [:index, :new, :create, :show] do
     resources :videos, only: [:index, :new, :create, :show] do
       resources :reviews, only: [:new, :create]

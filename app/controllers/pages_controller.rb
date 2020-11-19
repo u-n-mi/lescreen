@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
-  def dashboard
+  def settings
   end
+
+  def calendar
+  end
+
 end

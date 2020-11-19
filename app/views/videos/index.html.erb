@@ -1,1 +1,8 @@
 <h1>/interviews/id/videos</h1>
+<% if @videos.empty? %>
+<p> No one answer your interviews yet</p>
+<% else %>
+<% @videos.each do |video| %>
+<%= video.name %>
+<% end %>
+<% end %>

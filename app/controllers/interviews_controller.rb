@@ -20,6 +20,7 @@ class InterviewsController < ApplicationController
     @interview = Interview.find(params[:id])
   end
 
+
 private
 
   def interview_params
