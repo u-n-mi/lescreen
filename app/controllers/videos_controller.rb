@@ -26,6 +26,10 @@ class VideosController < ApplicationController
     @review = Review.new
   end
 
+  def videos
+    @interview = Interview.all
+  end
+
 private
 
   def video_params

@@ -3,4 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def settings
+  end
+
+  def calendar
+  end
+
 end

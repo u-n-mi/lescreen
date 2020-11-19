@@ -7,4 +7,5 @@ class Interview < ApplicationRecord
   def days_remaining
     Date.today - self.final_date.to_date
   end
+
 end

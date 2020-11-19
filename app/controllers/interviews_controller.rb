@@ -21,6 +21,7 @@ class InterviewsController < ApplicationController
     @question = Question.new
   end
 
+
 private
 
   def interview_params
