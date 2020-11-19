@@ -1,4 +1,9 @@
 class InterviewsController < ApplicationController
+
+  def index
+    @interviews = Interview.all
+  end
+
   def new
     @interview = Interview.new
   end
@@ -7,7 +12,7 @@ class InterviewsController < ApplicationController
     @interview = Interview.new(interview_params)
     @interview.user = current_user
     if @interview.save
-      redirect_to interviews_path(@interview)
+      redirect_to interview_path(@interview)
     end
   end
 
@@ -15,7 +20,11 @@ class InterviewsController < ApplicationController
     @interview = Interview.find(params[:id])
   end
 
-  def index
-    @interviews = Interview.all
+private
+
+  def interview_params
+    params.require(:interview).permit(:open_date, :final_date)
   end
 end
+
+
