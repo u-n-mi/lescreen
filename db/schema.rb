@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_172458) do
+ActiveRecord::Schema.define(version: 2020_11_19_170034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "candidates", force: :cascade do |t|
+    t.bigint "video_id", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["video_id"], name: "index_candidates_on_video_id"
+  end
 
   create_table "interviews", force: :cascade do |t|
     t.datetime "open_date"
@@ -21,7 +31,17 @@ ActiveRecord::Schema.define(version: 2020_11_18_172458) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "company"
     t.index ["user_id"], name: "index_interviews_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "interview_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "question"
+    t.index ["interview_id"], name: "index_questions_on_interview_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -55,7 +75,9 @@ ActiveRecord::Schema.define(version: 2020_11_18_172458) do
     t.index ["interview_id"], name: "index_videos_on_interview_id"
   end
 
+  add_foreign_key "candidates", "videos"
   add_foreign_key "interviews", "users"
+  add_foreign_key "questions", "interviews"
   add_foreign_key "reviews", "users"
   add_foreign_key "reviews", "videos"
   add_foreign_key "videos", "interviews"

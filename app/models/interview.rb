@@ -1,11 +1,11 @@
 class Interview < ApplicationRecord
   belongs_to :user
-  has_many :videos, dependent: :destroy
+  has_many :videos
+  has_many :questions
+  validates :name, presence: true
 
-  include PgSearch::Model
-  pg_search_scope :search_by_name_and_date,
-    against: [:name, :open_date, :final_date],
-    using: {
-      tsearch: { prefix: true }
-    }
+  def days_remaining
+    Date.today - self.final_date.to_date
+  end
+
 end

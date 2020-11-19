@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'videos', to: 'pages#videos'
   get 'settings', to: 'pages#settings'
   resources :interviews, only: [:index, :new, :create, :show] do
+    resources :questions, only: [:index, :new, :create]
     resources :videos, only: [:index, :new, :create, :show] do
       resources :reviews, only: [:new, :create]
     end

@@ -1,1 +1,8 @@
-<h1>interviews#index</h1>
+<h1>Your Campaigns</h1>
+<% @interviews.each do |interview| %>
+<div>
+Role: <%= interview.name %> @ <%= interview.company %>
+- <%= interview.days_remaining %> days
+</div>
+<% end %>
+

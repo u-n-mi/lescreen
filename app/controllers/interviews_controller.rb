@@ -18,13 +18,14 @@ class InterviewsController < ApplicationController
 
   def show
     @interview = Interview.find(params[:id])
+    @question = Question.new
   end
 
 
 private
 
   def interview_params
-    params.require(:interview).permit(:open_date, :final_date)
+    params.require(:interview).permit(:open_date, :final_date, :name, :company)
   end
 end
 
