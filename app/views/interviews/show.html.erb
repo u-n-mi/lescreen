@@ -1,5 +1,10 @@
 <%= @interview.name %>
 <%= @interview.open_date %>
 <%= @interview.final_date %>
-
+<%= render 'questions/new' %>
+<% @interview.questions.each do |question| %>
+<div>
+<%= question.question %>
+</div>
+<% end %>
 <!-- add days remaining! that would be cool! -->
