@@ -9,26 +9,33 @@ puts 'Cleaning Database'
 User.delete_all
 Interview.delete_all
 Video.delete_all
+Candidate.delete_all
+Question.delete_all
 Review.delete_all
 
 # users
 puts 'Creating users'
-maria = User.new(email: "maria@lescreen.com", password: "123456")
-maria.save!
+maria = User.create(email: "maria@lescreen.com", password: "123456")
 
 # Interview
 puts 'Creating Interviews'
-one = Interview.create(open_date: "19/11/2020", final_date: "25/11/2020", user: maria)
-two = Interview.create(open_date: "19/11/2020", final_date: "25/11/2020", user: maria)
+one = Interview.create(open_date: "19/11/2020", final_date: "25/11/2020", name:"CTO", company:"Twitter", user: maria)
+two = Interview.create(open_date: "19/11/2020", final_date: "25/11/2020", name: "Full Stack", company: "LeWagon", user: maria)
 # Videos
 puts 'Creating Videos'
-video_one = Video.new(name: "name1", interview: one)
-video_one.save!
+video_one = Video.create(name: "name1", interview: one)
+
+#Candidates
+puts 'Creating candidates'
+jonny = Candidate.create[video_id: one, first_name: "Jonny", last_name: "Davis", email: "jonny@davis.pt"]
+
+#Questions
+puts  'Creating questions'
+question_one = Question.create(question: "Introduce yourself in french", interview: one)
 
 # Review
 puts 'Creating Reviews'
-review_one = Review.new(rating: "5", comment: "stars", video: video_one, user:maria)
-review_one.save!
+review_one = Review.create(rating: "5", comment: "stars", video: video_one, user: maria)
 
 #done
 puts 'Its alright'
