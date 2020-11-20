@@ -39,3 +39,4 @@ review_one = Review.create(rating: "5", comment: "stars", video: video_one, user
 
 #done
 puts 'Its alright'
+puts 'ola'
