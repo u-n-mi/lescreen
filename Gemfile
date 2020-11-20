@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # search bar
 gem 'pg_search', '~> 2.3.0'
+
+# Gemfile
+gem 'dotenv-rails', groups: [:development, :test]
