@@ -9,9 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require('admin-lte');
 
-
-
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -29,8 +26,6 @@ require('admin-lte');
 import "bootstrap";
 import '../stylesheets/application';
 import "@fortawesome/fontawesome-free/js/all";
-
-
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
