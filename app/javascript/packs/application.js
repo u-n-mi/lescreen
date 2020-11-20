@@ -30,14 +30,11 @@ import "bootstrap";
 import '../stylesheets/application';
 import "@fortawesome/fontawesome-free/js/all";
 
-
-
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  $('[data-toggle="tooltip"]').tooltip()
-  // Call your functions here, e.g:
-  // initSelect2();
+    $('[data-toggle="tooltip"]').tooltip()
+        // Call your functions here, e.g:
+        // initSelect2();
 });
-
