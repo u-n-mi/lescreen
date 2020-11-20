@@ -1,6 +1,7 @@
 class VideosController < ApplicationController
 
   def index
+    @interview = Interview.find(params[:interview_id])
     @videos = Video.all
   end
 
