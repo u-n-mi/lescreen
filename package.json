@@ -9,6 +9,7 @@
     "@rails/webpacker": "4.3.0",
     "admin-lte": "^3.0",
     "bootstrap": "^4.5.3",
+    "flatpickr": "^4.6.6",
     "jquery": "^3.5.1",
     "nodejs": "^0.0.0",
     "nodejs-npm": "^1.0.0",
