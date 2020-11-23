@@ -1,33 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LeScreen</title>
+    <title>Le Screen</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
   </head>
 
-  <!-- <body data-scrollbar-auto-hide="n" class="hold-transition sidebar-mini layout-fixed"> -->
-  <body>
-      <div class="wrapper">
+  <%# <body>
+    <%= render 'shared/navbar' %>
+    <%# <%= yield %>
+    <%# <%= render 'shared/footer' %>
 
-        <%= render "base/header" %>
-        <%= render "base/sidebar" %>
-
-        <div class="content-wrapper">
-          <div class="content container-fluid">
-            <div class="container-fluid">
-              <%= yield %>
-            </div>
-          </div>
-        </div>
-
-        <%= render "base/footer" %>
-        <%= render "base/control_sidebar" %>
-      <div>
-  </body>
-</html>
+  <%# </body> %>
+<%# </html> %> 

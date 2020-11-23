@@ -7,7 +7,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-    // require('admin-lte');
 
 
 
@@ -27,22 +26,17 @@ require("channels")
 // ----------------------------------------------------
 
 // External imports
+
 import "bootstrap";
-import '../stylesheets/application';
-import "@fortawesome/fontawesome-free/js/all";
+
 
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 // import { flat_pickr } from '../plugins/flatpickr';
 
-document.addEventListener('turbolinks:load', () => {
-    $('[data-toggle="tooltip"]').tooltip()
-        // Call your functions here, e.g:
-        // initSelect2();
-});
+
 document.addEventListener('turbolinks:load', () => {
     // Call your functions here, e.g:
     // initSelect2();
-    // flat_pickr();
 });
