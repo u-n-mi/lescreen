@@ -55,4 +55,10 @@
   </div>
 </section>
 
-
+<% @interview.videos.each do |video| %>
+<%= link_to  interview_video_path(video.interview, video) do %>
+  <div>
+    <h2><%= video.name %></h2>
+    <% end %>
+  </div>
+<% end %>
