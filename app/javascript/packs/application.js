@@ -7,7 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require('admin-lte');
+    // require('admin-lte');
 
 
 
@@ -34,7 +34,7 @@ import "@fortawesome/fontawesome-free/js/all";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { flat_pickr } from '../plugins/flatpickr';
+// import { flat_pickr } from '../plugins/flatpickr';
 
 document.addEventListener('turbolinks:load', () => {
     $('[data-toggle="tooltip"]').tooltip()
@@ -42,8 +42,7 @@ document.addEventListener('turbolinks:load', () => {
         // initSelect2();
 });
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  flat_pickr();
+    // Call your functions here, e.g:
+    // initSelect2();
+    // flat_pickr();
 });
-
