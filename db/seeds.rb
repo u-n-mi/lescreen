@@ -27,7 +27,7 @@ video_one = Video.create(name: "name1", interview: one)
 
 #Candidates
 puts 'Creating candidates'
-jonny = Candidate.create[video_id: one, first_name: "Jonny", last_name: "Davis", email: "jonny@davis.pt"]
+jonny = Candidate.create(video: video_one, first_name: "Jonny", last_name: "Davis", email: "jonny@davis.pt")
 
 #Questions
 puts  'Creating questions'
