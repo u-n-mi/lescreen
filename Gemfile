@@ -27,6 +27,12 @@ gem 'redis', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'jquery-rails'
+gem 'momentjs-rails', '>= 2.9'
+
 
 gem 'devise'
 
@@ -63,3 +69,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # search bar
 gem 'pg_search', '~> 2.3.0'
+
+# Gemfile
+gem 'dotenv-rails', groups: [:development, :test]
