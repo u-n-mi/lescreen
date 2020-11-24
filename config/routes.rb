@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'calendar', to: 'pages#calendar'
   get 'videos', to: 'pages#videos'
   get 'settings', to: 'pages#settings'
+  post 'sendsms', to: 'videos#send_sms'
   resources :interviews, only: [:index, :new, :create, :show] do
     resources :questions, only: [:index, :new, :create]
     resources :videos, only: [:index, :new, :create, :show] do
