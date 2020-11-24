@@ -8,6 +8,11 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+var jQuery = require("jquery");
+
+// import jQuery from "jquery";
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -24,18 +29,18 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import '../stylesheets/application';
+import "@fortawesome/fontawesome-free/js/all";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-// import { flat_pickr } from '../plugins/flatpickr';
+import { flat_pickr } from '../plugins/flatpickr';
 
 document.addEventListener('turbolinks:load', () => {
-    $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
+  flat_pickr();
         // Call your functions here, e.g:
         // initSelect2();
 });
-document.addEventListener('turbolinks:load', () => {
-    // Call your functions here, e.g:
-    // initSelect2();
-    // flat_pickr();
-});
+
