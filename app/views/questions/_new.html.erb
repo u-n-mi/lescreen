@@ -1,4 +1,4 @@
-<p>Add a question </p>
+<div><p>Add some questions </p></div>
 <%= simple_form_for [@interview, @question] do |f| %>
 <div class="form-inputs">
   <%= f.input :question %>
@@ -29,6 +29,9 @@
     params[:deadline],
     class: "form-control",
     value: @interview.final_date
+  %>
+<%= hidden_field_tag :interview,
+    @interview.id
   %>
   <%= submit_tag "Invite", class: "btn btn-primary" %>
 <% end %>
