@@ -1,6 +1,7 @@
 require 'twilio-ruby'
 class SendSms
-  def initialize(number, link, company, deadline)
+
+def initialize(number, link, company, deadline)
     @number = number
     @link = link
     @company = company
