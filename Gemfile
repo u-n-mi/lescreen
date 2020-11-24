@@ -37,6 +37,7 @@ gem 'momentjs-rails', '>= 2.9'
 gem 'devise'
 
 gem 'autoprefixer-rails'
+gem 'mini_racer'
 gem 'font-awesome-sass'
 gem 'simple_form'
 group :development, :test do  gem 'pry-byebug'
