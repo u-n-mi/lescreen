@@ -9,10 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require('admin-lte');
 
-
-
-
-
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -37,13 +33,9 @@ import "@fortawesome/fontawesome-free/js/all";
 import { flat_pickr } from '../plugins/flatpickr';
 
 document.addEventListener('turbolinks:load', () => {
-    $('[data-toggle="tooltip"]').tooltip()
+  $('[data-toggle="tooltip"]').tooltip();
+  flat_pickr();
         // Call your functions here, e.g:
         // initSelect2();
-});
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  flat_pickr();
 });
 
