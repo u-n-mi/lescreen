@@ -1,0 +1,21 @@
+<h1>Search</h1>
+
+<%= form_for Search.new do |f| %>
+  <div class ="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :role %>
+  </div>
+  <div class = "field">
+    <%= f.label :company %><br/>
+    <%= f.text_field :company %>
+  </div>
+  <div class = "field">
+    <%= f.label :open_date %><br/>
+    <%= f.text_field :open_date %>
+  </div>
+  <div class = "field">
+    <%= f.label :end_date %><br/>
+    <%= f.text_field :end_date %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

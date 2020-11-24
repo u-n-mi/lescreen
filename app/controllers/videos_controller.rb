@@ -32,6 +32,7 @@ class VideosController < ApplicationController
   end
 
   def send_sms
+
   @interview = Interview.find(params[:interview])
   SendSms.new(params[:number], params[:link], params[:company], params[:deadline]).send_message
   redirect_to interview_path(@interview), notice: "Success, the invitation was sent! You can now add another phone number..."
