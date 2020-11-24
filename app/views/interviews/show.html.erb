@@ -1,4 +1,6 @@
-<%= @interview.name %> - <%= @interview.company %>
+<div>Role: <%= @interview.name %></div>
+<div>Company: <%= @interview.company %></div>
+<div> Deadline: <%= @interview.final_date %></div>
 
 <%= render 'questions/new' %>
 <% @interview.questions.each do |question| %>

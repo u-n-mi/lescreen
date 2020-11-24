@@ -1,4 +1,4 @@
-<h3>Add a question </h3>
+<p>Add a question </p>
 <%= simple_form_for [@interview, @question] do |f| %>
 <div class="form-inputs">
   <%= f.input :question %>
@@ -13,13 +13,23 @@
   <%= text_field_tag :number,
     params[:number],
     class: "form-control",
-    placeholder: "Write your number"
+    placeholder: "Write candidate number"
   %>
 <%= text_field_tag :link,
     params[:link],
     class: "form-control",
-    placeholder: "Link - its going to be hidden"
+    placeholder: "Add link"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+<%= text_field_tag :company,
+    params[:company],
+    class: "form-control",
+    value: @interview.company
+  %>
+<%= text_field_tag :deadline,
+    params[:deadline],
+    class: "form-control",
+    value: @interview.final_date
+  %>
+  <%= submit_tag "Invite", class: "btn btn-primary" %>
 <% end %>
 

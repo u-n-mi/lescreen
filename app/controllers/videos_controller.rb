@@ -32,8 +32,7 @@ class VideosController < ApplicationController
   end
 
   def send_sms
-    SendSms.new(params[:number], params[:link]).send_message
-    redirect_to root_path
+    SendSms.new(params[:number], params[:link], params[:company], params[:deadline]).send_message
   end
 
 private
