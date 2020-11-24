@@ -37,6 +37,8 @@ gem 'momentjs-rails', '>= 2.9'
 gem 'devise'
 
 gem 'autoprefixer-rails'
+gem 'mini_racer'
+gem 'uglifier'
 gem 'font-awesome-sass'
 gem 'simple_form'
 group :development, :test do  gem 'pry-byebug'
@@ -72,3 +74,9 @@ gem 'pg_search', '~> 2.3.0'
 
 # Gemfile
 gem 'dotenv-rails', groups: [:development, :test]
+
+#cloudinary
+gem 'cloudinary', '~> 1.16.0'
+
+#SMS
+gem 'twilio-ruby', '~> 5.43.0'
