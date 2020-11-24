@@ -72,3 +72,6 @@ gem 'pg_search', '~> 2.3.0'
 
 # Gemfile
 gem 'dotenv-rails', groups: [:development, :test]
+
+#SMS
+gem 'twilio-ruby', '~> 5.43.0'
