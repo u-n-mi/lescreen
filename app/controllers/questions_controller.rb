@@ -18,6 +18,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  # def destroy
+  #   @interview = Interview.find(params[:id])
+  #   @question.interview = @interview
+  #   @question.destroy
+  #   redirect_to interview_questions_path(@interview)
+
 private
 
   def question_params

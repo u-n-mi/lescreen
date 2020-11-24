@@ -5,9 +5,9 @@
 
 <%= render 'questions/new' %>
 <% @interview.questions.each do |question| %>
-<div>
-<%= question.question %>
-</div>
+  <li>
+    <%= question.question %>
+  </li>
 <% end %>
 
 
