@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
     @review.video = @video
     @review.user = current_user
     if @review.save
-      redirect_to interview_video_path(@interview.id, @video.id)
+      redirect_to interview_videos_path(@interview.id)
     else
       render "videos/show"
     end
