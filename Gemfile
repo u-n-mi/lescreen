@@ -38,6 +38,7 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'mini_racer'
+gem 'uglifier', '~> 2.7'
 gem 'font-awesome-sass'
 gem 'simple_form'
 group :development, :test do  gem 'pry-byebug'
