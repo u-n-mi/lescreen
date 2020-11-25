@@ -3,9 +3,10 @@ class Interview < ApplicationRecord
   has_many :videos, dependent: :destroy
   has_many :questions, dependent: :destroy
   validates :name, :company, presence: true
+  has_one_attached :photo
 
   def days_remaining
-    Date.today - self.final_date.to_date
+    -(Date.today - self.final_date.to_date).to_i
   end
 
   include PgSearch::Model
