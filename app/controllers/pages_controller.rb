@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def calendar
   end
 
+  def videoapp
+  end
+
 end

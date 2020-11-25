@@ -15,7 +15,7 @@
     placeholder: "Write candidate number"
   %>
 <%= text_field_tag :link,
-    params[:link],
+    "Please submit your application here: " +  new_interview_video_url(@interview),
     class: "form-control",
     placeholder: "Add link"
   %>

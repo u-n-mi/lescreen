@@ -1,0 +1,5 @@
+<%= simple_form_for([@interview, @video]) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :video, as: :file %>
+  <%= f.button :submit, 'Send Video', class: "btn btn-primary" %>
+<% end %>

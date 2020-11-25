@@ -1,7 +1,11 @@
+<h3>Apply for <%= @interview.name %> at <%= @interview.company %></h3>
 
-<h3>Add </h3>
-<%= simple_form_for [@interview, @video] do |f| %>
-<%= f.input :name %>
-  <%= f.submit class: "btn btn-primary"%>
+<div>Answer these questions on a video</div>
+
+
+<% @interview.questions.each do |question| %>
+    <div><%= question.question %></div>
 <% end %>
+
+<%= render 'form', video: @video %>
 
