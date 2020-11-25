@@ -15,7 +15,7 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     @video.interview = @interview
     if @video.save
-      redirect_to interview_video_path(@interview.id, @video.id)
+      redirect_to root_path, notice: 'Thank you for your application'
     else
       render 'new'
     end
@@ -27,21 +27,20 @@ class VideosController < ApplicationController
     @review = Review.new
   end
 
-  def videos
+  def video
     @interview = Interview.all
   end
 
   def send_sms
-
-  @interview = Interview.find(params[:interview])
-  SendSms.new(params[:number], params[:link], params[:company], params[:deadline]).send_message
-  redirect_to interview_path(@interview), notice: "Success, the invitation was sent! You can now add another phone number..."
+    @interview = Interview.find(params[:interview])
+    SendSms.new(params[:number], params[:link], params[:company], params[:deadline]).send_message
+    redirect_to interview_path(@interview), notice: "Success, the invitation was sent! You can now add another phone number..."
   end
 
 private
 
   def video_params
-    params.require(:video).permit(:name)
+    params.require(:video).permit(:name, :body, :video)
   end
 end
 
