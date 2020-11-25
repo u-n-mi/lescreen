@@ -3,12 +3,7 @@
   <div class="row">
     <div class="col-md-6">
       <hr>
-      <h2>Have a<br/> nice day!</h2>
-      <br>
-      <%= image_tag('logo.png', :size => "125x150") %>
-
-      <br>
-      
+      <%= image_tag('logo_transparent.png') %>
     </div>
     <div class="col-md-6">
       <hr>
@@ -18,10 +13,12 @@
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
+                placeholder: 'user@domain.com',
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
         <%= f.input :password,
+                placeholder: 'Guessing: 123456',
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>

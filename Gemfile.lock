@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ziggeo (2.21)
+      httparty (~> 0.16)
     actioncable (6.0.3.4)
       actionpack (= 6.0.3.4)
       nio4r (~> 2.0)
@@ -114,6 +116,9 @@ GEM
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.18.1)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
@@ -148,6 +153,7 @@ GEM
     momentjs-rails (2.20.1)
       railties (>= 3.1)
     msgpack (1.3.3)
+    multi_xml (0.6.0)
     multipart-post (2.1.1)
     netrc (0.11.0)
     nio4r (2.5.4)
@@ -287,6 +293,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  Ziggeo
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   bootstrap-datepicker-rails

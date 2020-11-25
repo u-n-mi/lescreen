@@ -11,21 +11,26 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.0.5/js/adminlte.min.js" integrity="sha512-++c7zGcm18AhH83pOIETVReg0dr1Yn8XTRw+0bWSIWAVCAwz1s2PwnSj4z/OOyKlwSXc4RLg3nnjR22q0dhEyA==" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <link rel="stylesheet" href="//assets-cdn.ziggeo.com/v1-stable/ziggeo.css" />
+    <script src="//assets-cdn.ziggeo.com/v1-stable/ziggeo.js"></script>
+    <script>ZiggeoApi.token = '<%= ENV['ZIGGEO_KEY'] %>';</script>
   </head>
 
   <!-- <body data-scrollbar-auto-hide="n" class="hold-transition sidebar-mini layout-fixed"> -->
   <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
       <div class="wrapper">
-
-        <%= render "shared/flashes" %>
-
-
         <%= render "base/header" %>
-
         <%= render "base/sidebar" %>
-
         <div class="content-wrapper">
+          <%= render "shared/flashes" %>
           <div class="content container-fluid">
             <div class="container-fluid">
               <%= yield %>
