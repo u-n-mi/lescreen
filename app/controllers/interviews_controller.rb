@@ -21,6 +21,12 @@ class InterviewsController < ApplicationController
     @question = Question.new
   end
 
+  def destroy
+    @interview = Interview.find(params[:id])
+    @interview.destroy
+    redirect_to interviews_path
+  end
+
 private
 
   def interview_params
