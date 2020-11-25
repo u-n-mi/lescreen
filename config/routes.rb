@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dashboard', to: 'users#dashboard'
   get 'calendar', to: 'pages#calendar'
-  get 'videos', to: 'pages#videos'
+  get 'video', to: 'pages#video'
   get 'settings', to: 'pages#settings'
   post 'sendsms', to: 'videos#send_sms'
   resources :interviews, only: [:index, :new, :create, :show, :destroy] do
@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   end
   resources :candidates, only: [:create, :new, :show]
   resources :searches
+
+  get 'thank_you', to: 'videos#thank_you'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen"/>        
+    <title>Video Application</title>
+
+  </head>
+ 
+<body>
+<!-- This file lives in public/video.html -->
+<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API/Recording_a_media_element -->
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="startButton" class="btn btn-primary">Start</div>
+        <h2>Preview</h2>
+        <video id="preview" autoplay muted></video>
+      </div>
+      <div class="col-lg-6">
+        <div id="stopButton" class="btn btn-primary">Stop</div>
+        <h2>Recording</h2>
+        <video id="recording" controls></video>
+        <a id="downloadButton" class="btn btn-primary">Download</a>
+      </div>
+   </div>
+   <hr>	  
+   <div class="row">
+	 <div class="col-sm">
+       <pre id="log"></pre>
+       <h2 class="text-center">Question 1: Tell me about yourself.</h2>
+	 </div>
+   </div>
+   <hr>	  
+   <button id="upload_widget" class="cloudinary-button">Upload files</button>
+  </div>
+</section> 
+<%= javascript_pack_tag 'videocapture.js' %>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script>
+var myWidget = cloudinary.createUploadWidget({
+  cloudName: 'dksknrpn3', 
+  uploadPreset: 'fpmjqmcp'}, (error, result) => { 
+    if (!error && result && result.event === "success") { 
+      console.log('Done! Here is the result: ', result.info); 
+    }
+  }
+)
+
+document.getElementById("upload_widget").addEventListener("click", function(){
+    myWidget.open();
+  }, false);
+</script>
+</body>
+</html>
