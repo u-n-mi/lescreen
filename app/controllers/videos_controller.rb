@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [ :new , :create, :thank_you]
   def index
     @interview = Interview.find(params[:interview_id])
     @videos = Video.all
@@ -8,6 +8,7 @@ class VideosController < ApplicationController
   def new
     @interview = Interview.find(params[:interview_id])
     @video = Video.new
+    render layout: "mobile"
   end
 
   def create
@@ -15,10 +16,14 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     @video.interview = @interview
     if @video.save
-      redirect_to root_path, notice: 'Thank you for your application'
+      redirect_to thank_you_path
     else
       render 'new'
     end
+  end
+
+  def thank_you
+    render layout: 'mobile'
   end
 
   def show

@@ -1,29 +1,10 @@
-<h1>Submit your video and answer the questions</h1>
+<h3>Apply for <%= @interview.name %> at <%= @interview.company %></h3>
+
+<div>Answer these questions on a video</div>
 
 <% @interview.questions.each do |question| %>
     <div><%= question.question %></div>
 <% end %>
-
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div id="startButton" class="btn btn-primary">Start</div>
-        <div id="stopButton" class="btn btn-primary">Stop</div>
-        <h2>Preview</h2>
-        <video id="preview" autoplay muted></video>
-      </div>
-      <div class="col-lg-6">
-        
-        <h2>Recording</h2>
-        <video id="recording" controls></video>
-        <a id="downloadButton" class="btn btn-primary">Download</a>
-      </div>
-    </div>  
-   </div>
-</section> 
-<%= javascript_pack_tag 'videocapture.js' %>
-
 
 <%= render 'form', video: @video %>
 

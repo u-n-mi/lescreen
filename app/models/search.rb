@@ -1,6 +1,6 @@
 class Search < ApplicationRecord
   def interviews
-    @interviews ||= find_interviews
+    @interviews ||= find_interviews.permit!
   end
 
   private

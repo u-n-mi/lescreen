@@ -1,0 +1,14 @@
+.row {
+    display: flex;
+}
+
+.row h1 {
+    width: 33.33%;
+    flex: 10%;
+    margin-left: 40px;
+}
+
+.row button {
+    width: 50%;
+    margin-left: 500px;
+}
