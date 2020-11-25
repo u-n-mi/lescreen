@@ -1,19 +1,13 @@
 <br><h3>New Interview</h3>
 <div class="form-style-5">
-<form><%= simple_form_for [@user, @interview] do |f| %>
-  <fieldset>
+<%= simple_form_for [@user, @interview] do |f| %>
   <legend><span class="number">1</span> Job Info</legend>
   <%= f.input :name%>
   <%= f.input :company %>
   <%= f.input :photo, as: :file %>
-  </select>
-  </fieldset>
-  <fieldset>
   <legend><span class="number">2</span>When do you want to start? </legend>
       <%= f.input :open_date, as: :string, label: "Start Date", input_html: { class: "datepicker"}  %>
       <%= f.input :final_date, as: :string, label: "Closing Date:".html_safe, input_html: { class: "datepicker" } %>
-  </fieldset>
   <%= f.submit class: "btn btn-primary btn-lg"%>
-  </form>
 <% end  %>
 </div>

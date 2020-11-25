@@ -8,30 +8,28 @@
 </div>
 
 <% @interviews.order("final_date").each do |interview| %>
-
-
-<div class="courses-container">
-  <div class="course">
-    <div class="course-preview">
-      <% if interview.photo.attached? %>
-        <%= cl_image_tag interview.photo.key, crop: :fill %>
-      <% else %>
-        <h6><%= interview.company %></h6>
-    </div>
-    <div class="course-info">
-      <div class="progress-container">
-        <div class="progress"></div>
-          <span class="progress-text">
-            6/9
-          </span>
-        </div>
-        <h6><%= interview.company %> | <%= interview.name %></h6><br>
-        <h4><strong><%= interview.days_remaining %> days</strong> left.</h4>
-        <button class="btn-video"><%= link_to interview_videos_path(interview) do %>Check</button>
-        <% end  %>
+  <div class="courses-container">
+    <div class="course">
+      <div class="course-preview">
+        <% if interview.photo.attached? %>
+          <%= cl_image_tag interview.photo.key, crop: :fill %>
+        <% else %>
+          <h6><%= interview.company %></h6>
       </div>
-    </div>
-  <% end %>
-</div>
+      <div class="course-info">
+        <div class="progress-container">
+          <div class="progress"></div>
+            <span class="progress-text">
+              6/9
+            </span>
+          </div>
+          <h6><%= interview.company %> | <%= interview.name %></h6><br>
+          <h4><strong><%= interview.days_remaining %> days</strong> left.</h4>
+          <button class="btn-video"><%= link_to interview_videos_path(interview) do %>Check</button>
+          <% end  %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
