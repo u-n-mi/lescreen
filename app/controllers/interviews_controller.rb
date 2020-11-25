@@ -33,5 +33,3 @@ private
     params.require(:interview).permit(:open_date, :final_date, :name, :company, :photo)
   end
 end
-
-
