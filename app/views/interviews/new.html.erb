@@ -7,8 +7,8 @@
   <div class="flex-container2">
     <div class="form-style-5">
       <legend><span class="number">1</span> Job Info</legend>
-      <%= f.input :name%>
-      <%= f.input :company %>
+      <%= f.input :name, placeholder: "Job Role" %>
+      <%= f.input :company, placeholder: "Company that is hiring"%>
       <%= f.input :photo, as: :file %>
     </div>
     <div class="form-style-5">
@@ -18,7 +18,7 @@
     </div>
   </div>
   <div class="row d-flex justify-content-center mb-5">
-    <div class="col-md-8">
+    <div class="col-md-7">
       <%= f.submit class: "btn btn-primary"%>
     </div>
   </div>
