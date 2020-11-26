@@ -1,8 +1,11 @@
-<br><h3>New Interview</h3>
+<br>
+<div class="text-center">
+  <h3>New Interview</h3>
+</div>
 <div class="form-container">
+  <%= simple_form_for [@user, @interview] do |f| %>
   <div class="flex-container2">
     <div class="form-style-5">
-      <%= simple_form_for [@user, @interview] do |f| %>
       <legend><span class="number">1</span> Job Info</legend>
       <%= f.input :name%>
       <%= f.input :company %>
@@ -14,8 +17,10 @@
       <%= f.input :final_date, as: :string, label: "Closing Date:".html_safe, input_html: { class: "datepicker" } %>
     </div>
   </div>
-  <div class="create-interview">
-    <%= f.submit class: "btn btn-primary btn-lg"%>
-   </div>
-  <% end  %>
+  <div class="row">
+    <div class="offset-3 col-6">
+      <%= f.submit class: "btn btn-primary"%>
+    </div>
+  </div>
+  <% end %>
 </div>

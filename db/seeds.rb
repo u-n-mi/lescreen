@@ -25,9 +25,9 @@ two = Interview.create(open_date: "22/11/2020", final_date: "30/11/2020", name: 
 three = Interview.create(open_date: "1/12/2020", final_date: "1/02/2021", name: "Chocolate Taster", company: "Milka", user: maria)
 # Videos
 puts 'Creating Videos'
-video_one = Video.create(name: "Hire me!", interview: one)
-video_two = Video.create(name: "I'm amazing", interview: two)
-video_three = Video.create(name: "I know Chocolate better than anyone", interview: three)
+video_one = Video.create(name: "Jonny", interview: one)
+video_two = Video.create(name: "Romano", interview: two)
+video_three = Video.create(name: "Margarida", interview: three)
 
 #Candidates
 puts 'Creating candidates'
