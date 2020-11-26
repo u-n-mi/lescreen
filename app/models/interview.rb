@@ -6,7 +6,7 @@ class Interview < ApplicationRecord
   has_one_attached :photo
 
   def days_remaining
-    -(Date.today - self.final_date.to_date).to_i
+    -(Date.today - self.final_date.to_date).to_i if self.final_date
   end
 
   include PgSearch::Model

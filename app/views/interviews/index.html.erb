@@ -4,8 +4,6 @@
     <%= link_to "Create New", new_interview_path, class: "btn btn-primary btn-lg" %>
   </span>
 </div>
-
-
 <div class="flex-container3">
 <% @interviews.order("final_date").each do |interview| %>
   <div class="card-product2">
@@ -23,8 +21,3 @@
   </div>
   <% end %>
 </div>
-
-
-
-
-
