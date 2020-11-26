@@ -1,11 +1,13 @@
-<h3>Apply for <%= @interview.name %> at <%= @interview.company %></h3>
+<div class="text-white text-center">
+  <h3>Apply for <%= @interview.name %> at <%= @interview.company %></h3>
 
-<div>Answer these questions on a video</div>
+  <div>Answer these questions on a video</div>
 
 
-<% @interview.questions.each do |question| %>
-    <div><%= question.question %></div>
-<% end %>
-
-<%= render 'form', video: @video %>
-
+  <% @interview.questions.each do |question| %>
+      <div><%= question.question %></div>
+  <% end %>
+  <div class="mt-5">
+  <%= render 'form', video: @video %>
+  </div>
+</div>

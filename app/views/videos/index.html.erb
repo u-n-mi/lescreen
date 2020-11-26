@@ -1,7 +1,4 @@
-<h1>/videos/id/index</h1>
-Delete Campaign: <%= link_to interview_path(@interview), method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
-<i class="fa fa-trash" aria-hidden="true"></i>
-<% end %>
+
 <!-- Videos-->
 <section class="page-section" id="videos">
   <div class="container">
@@ -13,7 +10,7 @@ Delete Campaign: <%= link_to interview_path(@interview), method: :delete, data: 
           <div class="col-lg-3 col-md-6 text-center">
             <div class="mt-5">
               <div class="card-deck">
-                <div class="card bg-warning" style="width: 300px;">
+                <div class="card bg-warning" style="width: 150px;">
                   <div class="card-header"><%= link_to video.name, interview_video_path(video.interview, video) %></div>
                   <div class="embed-responsive embed-responsive-16by9 cld-video-player cld-video-player-skin-dark cld-fluid">
                     <%= cl_video_tag video.video.key, :controls => true %>
@@ -32,10 +29,14 @@ Delete Campaign: <%= link_to interview_path(@interview), method: :delete, data: 
                 </div>
               </div>
             </div>
-
           </div> <!-- end of col-->
         <% end %>
       <% end %>
-    </div>  
+    </div>
   </div>
 </section>
+
+<h1>Delete Campaign: <%= link_to interview_path(@interview), method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
+  <i class="fa fa-trash" aria-hidden="true"></i>
+  <% end %>
+</h1>
