@@ -30,9 +30,9 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>53<sup style="font-size: 20px">%</sup></h3>
+                        <h3>53<sup style="font-size: 20px"></sup></h3>
 
-                        <p>Response Rate</p>
+                        <p>Sucessful Candiates</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -64,7 +64,7 @@
                     <div class="inner">
                         <h3>65</h3>
 
-                        <p>Sucessful Candiates</p>
+                        <p>Videos to Watch</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
@@ -82,18 +82,22 @@
             <section class="col-lg-6 connectedSortable">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Videos To Watch</h3>
+                        <h3 class="card-title">Latest videos submitted</h3>
                     </div>
                     <tbody>
-                          <% Video.all.each do |video| %>
-                            <div class="card-product">
-                              <img src="https://images.unsplash.com/photo-1531565637446-32307b194362?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2452&q=80">
-                              <div class="card-product-infos">
+                        <% Video.all.each do |video| %>
+                          <div class="card-product">
+                            <% if video.interview.photo.attached? %>
+                              <%= cl_image_tag interview.photo.key, crop: :fill %>
+                            <% else %>
+                              <h6><%= video.interview.company %></h6>
+                            <% end %>
+                            <div class="card-product-infos">
                                 <h2><strong><%= video.name %></strong></h2>
                                 <p> <%= video.interview.company %> : <%= video.interview.name %> </p>
-                              </div>
-                            </div><hr>
-                          <% end %>
+                            </div>
+                          </div><hr>
+                        <% end %>
                     </tbody>
                 </div>
             </section>
@@ -192,10 +196,6 @@
                                 </div>
                             </li>
                             <li>
-                                <span class="handle">
-                                    <i class="fas fa-ellipsis-v"></i>
-                                    <i class="fas fa-ellipsis-v"></i>
-                                </span>
                                 <div class="icheck-primary d-inline ml-2">
                                     <input type="checkbox" value="" name="todo3" id="todoCheck3">
                                     <label for="todoCheck3"></label>
@@ -213,7 +213,8 @@
                     <!-- /.card-body -->
                     <div class="card-footer clearfix">
                         <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i>
-                            Add item</button>
+                            Add item
+                        </button>
                     </div>
                 </div>
 

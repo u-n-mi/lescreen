@@ -1,7 +1,4 @@
-<h1>/videos/id/index</h1>
-Delete Campaign: <%= link_to interview_path(@interview), method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
-<i class="fa fa-trash" aria-hidden="true"></i>
-<% end %>
+
 <!-- Videos-->
 <section class="page-section" id="videos">
   <div class="container">
@@ -36,6 +33,11 @@ Delete Campaign: <%= link_to interview_path(@interview), method: :delete, data: 
           </div> <!-- end of col-->
         <% end %>
       <% end %>
-    </div>  
+    </div>
   </div>
 </section>
+
+<h1>Delete Campaign: <%= link_to interview_path(@interview), method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
+  <i class="fa fa-trash" aria-hidden="true"></i>
+  <% end %>
+</h1>
