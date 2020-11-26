@@ -40,4 +40,30 @@ video {
   transition: 1s opacity;
 }
 
-  
+
+body {
+  //overflow-x: hidden;
+  //color: #505962;
+}
+.caption {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  color: #fff;
+}
+.caption h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: .2rem;
+  text-shadow: .1rem .1rem .8rem black;
+  padding-bottom: 1rem;
+}
+.caption h3 {
+  font-size: 1rem;
+  text-shadow: .1rem .1rem .5rem black;
+  padding-bottom: 1.6rem;
+}
+
+.mobile-logo {
+  width: 200px;
+}
