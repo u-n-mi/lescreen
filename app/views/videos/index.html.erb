@@ -10,7 +10,7 @@
           <div class="col-lg-3 col-md-6 text-center">
             <div class="mt-5">
               <div class="card-deck">
-                <div class="card bg-warning" style="width: 300px;">
+                <div class="card bg-warning" style="width: 150px;">
                   <div class="card-header"><%= link_to video.name, interview_video_path(video.interview, video) %></div>
                   <div class="embed-responsive embed-responsive-16by9 cld-video-player cld-video-player-skin-dark cld-fluid">
                     <%= cl_video_tag video.video.key, :controls => true %>
@@ -29,7 +29,6 @@
                 </div>
               </div>
             </div>
-
           </div> <!-- end of col-->
         <% end %>
       <% end %>
