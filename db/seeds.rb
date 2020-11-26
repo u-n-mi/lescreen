@@ -23,6 +23,9 @@ puts 'Creating Interviews'
 one = Interview.create(open_date: "19/11/2020", final_date: "25/11/2020", name:"CTO", company:"Twitter", user: maria)
 two = Interview.create(open_date: "22/11/2020", final_date: "30/11/2020", name: "Full Stack", company: "LeWagon", user: maria)
 three = Interview.create(open_date: "1/12/2020", final_date: "1/02/2021", name: "Chocolate Taster", company: "Milka", user: maria)
+four = Interview.create(open_date: "28/12/2020", final_date: "7/02/2021", name: "Web Designer", company: "Facebook", user: maria)
+five = Interview.create(open_date: "25/12/2020", final_date: "1/02/2021", name: "SEO", company: "------", user: maria)
+six = Interview.create(open_date: "29/12/2020", final_date: "1/02/2021", name: "Backend Developer", company: "Amazon", user: maria)
 # Videos
 puts 'Creating Videos'
 video_one = Video.create(name: "Jonny", interview: one)
@@ -41,9 +44,9 @@ question_one = Question.create(question: "Introduce yourself in french", intervi
 
 # Review
 puts 'Creating Reviews'
-review_one = Review.create(rating: "5", comment: "stars", video: video_one, user: maria)
-review_one = Review.create(rating: "5", comment: "stars", video: video_two, user: maria)
-review_one = Review.create(rating: "5", comment: "stars", video: video_three, user: maria)
+review_one = Review.create(rating: "5", comment: "Lot's of energy!", video: video_one, user: maria)
+review_one = Review.create(rating: "5", comment: "Very calm", video: video_two, user: maria)
+review_one = Review.create(rating: "5", comment: "love her!", video: video_three, user: maria)
 
 #done
 puts 'Its alright'
