@@ -5,6 +5,10 @@ class CandidatesController < ApplicationController
       @candidate = Candidate.new
     end
 
+    def index
+      @candidates = Candidate.all(params[:id])
+    end
+
     def show
       @candidate = Candidate.find(params[:id])
       @video = Video.new
@@ -18,7 +22,7 @@ class CandidatesController < ApplicationController
     private
 
     def candidate_params
-      params.require(:candidate).permit(:first_name, :last_name, :email)
+      params.require(:candidate).permit(:video_id, :first_name, :last_name, :email)
     end
 end
 
