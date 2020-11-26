@@ -7,9 +7,9 @@
       <div class="d-flex justify-content-around">
       <div class="form-style-5 w-50">
         <legend><span class="number">1</span>Job Info</legend>
-        <div>Role: <%= @interview.name %></div>
-        <div>Company: <%= @interview.company %></div>
-        <div> Deadline: <%= @interview.final_date %></div>
+        <div><strong>Role: <%= @interview.name %></strong></div>
+        <div><strong>Company: <%= @interview.company %></strong></div>
+        <div><strong> Deadline: <%= @interview.final_date %></strong></div>
         <%= simple_form_for [@interview, @question] do |f| %>
         <legend><span class="number">2</span> Questions</legend>
 
@@ -25,9 +25,9 @@
           <legend><span class="number">3</span>Check Question</legend>
             <div class="questions-added">
               <% @interview.questions.each do |question| %>
-              <li>
+              <div>
                 <%= question.question %>
-              </li>
+              </div>
               <% end %>
             </div>
           <legend><span class="number">4</span>Send SMS</legend>
