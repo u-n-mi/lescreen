@@ -85,20 +85,16 @@
                         <h3 class="card-title">Videos To Watch</h3>
                     </div>
                     <tbody>
-                        <% Candidate.all.each do |candidate| %>
                           <% Video.all.each do |video| %>
-                          <% Interview.all.each do |interview| %>
                             <div class="card-product">
                               <img src="https://images.unsplash.com/photo-1531565637446-32307b194362?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2452&q=80">
                               <div class="card-product-infos">
-                                <h2><%= candidate.first_name %> <%= candidate.last_name %></h2>
+                                <h2><%= video.name %></h2>
                                 <p><strong><%= video.name %></strong></p>
-                                <p> <%= interview.company %> : <%= interview.name %> </p>
+                                <p> <%= video.interview.company %> : <%= video.interview.name %> </p>
                               </div>
                             </div><hr>
                           <% end %>
-                          <% end %>
-                        <% end %>
                     </tbody>
                 </div>
             </section>
