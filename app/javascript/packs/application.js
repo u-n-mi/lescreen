@@ -31,7 +31,7 @@ window.$ = window.jQuery = jQuery;
 import "bootstrap";
 import '../stylesheets/application';
 import "@fortawesome/fontawesome-free/js/all";
-import "videocapture"
+//import "videocapture"
 
 
 // Internal imports, e.g:
@@ -40,13 +40,9 @@ import { flat_pickr } from '../plugins/flatpickr';
 import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
-  $('[data-toggle="tooltip"]').tooltip();
-  flat_pickr();
-  initStarRating();
-        // Call your functions here, e.g:
-        // initSelect2();
+    $('[data-toggle="tooltip"]').tooltip();
+    flat_pickr();
+    initStarRating();
+    // Call your functions here, e.g:
+    // initSelect2();
 });
-
-
-
-
