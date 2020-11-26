@@ -1,14 +1,13 @@
 <section>
-<div class="container">
+<div class="wrapper">
   <div class="row">
     <div class="col-md-6">
-      <hr>
-      <%= image_tag('logo_transparent.png') %>
+      <%= image_tag('logo_transparent_white.png') %>
     </div>
     <div class="col-md-6">
       <hr>
       <h2 class="text-justify">Account login</h2>
-      <span>Access your account.</span>
+      <span>Enter your credentials:</span>
       <hr>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
@@ -18,13 +17,14 @@
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
         <%= f.input :password,
-                placeholder: 'Guessing: 123456',
+                placeholder: '123456',
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <br>
       </div>
       <div class="form-actions"><br>
-        <button class="btn btn-primary sign-up-btn"><%= f.button :submit, "Log in" %></button>
+        <div class="btn btn-primary"><%= f.button :submit, "Login" %></div>
       </div>
       <div class="devise-links">
       <br><%= render "devise/shared/links" %>

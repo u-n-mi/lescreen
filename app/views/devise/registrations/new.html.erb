@@ -1,9 +1,9 @@
 <section>
-<div class="container">
+<div class="wrapper">
   <div class="row">
     <div class="col-md-6">
       <hr>
-      <%= image_tag('logo_transparent.png') %>
+      <%= image_tag('logo_transparent_white.png') %>
     </div>
     <div class="col-md-6">
       <hr>
@@ -14,19 +14,22 @@
       <%= f.error_notification %>
       <div class="form-inputs">
           <%= f.input :email,
+                      placeholder: 'user@domain.com',
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" }%>
           <%= f.input :password,
+                      placeholder: 'New password',
                       required: true,
                       hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                       input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
+                      placeholder: 'Re-enter password',
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
       </div>
       <div class="form-actions"><br>
-        <button class="btn btn-primary sign-up-btn"><%= f.button :submit, "Sign up" %></button>
+        <div class="btn btn-primary"><%= f.button :submit, "Sign up" %></div>
       </div>
       <div class="devise-links">
       <br><%= render "devise/shared/links" %>
