@@ -1,3 +1,71 @@
 .mobile-logo {
     width: 200px;
 }
+
+/*--- Fixed Video Background iOS/Mobile Style--*/
+.video-mobile-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  video {
+    width: unset;
+    height: unset;
+    border: none;
+  }
+}
+#video-mobile {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+  z-index: -1000;
+}
+video-mobile { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url('') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+
+.caption {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  color: #fff;
+}
+.caption h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: .2rem;
+  text-shadow: .1rem .1rem .8rem black;
+  padding-bottom: 1rem;
+}
+.caption h3 {
+  font-size: 1rem;
+  text-shadow: .1rem .1rem .5rem black;
+  padding-bottom: 1.6rem;
+}
+
+.mobile-logo {
+  width: 200px;
+}
