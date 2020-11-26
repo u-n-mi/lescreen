@@ -1,6 +1,6 @@
 <br>
 <div class="text-center">
-  <h3>New Interview</h3>
+  <h3>New Interview - lets get started!</h3>
 </div>
 <div class="form-container">
   <%= simple_form_for [@user, @interview] do |f| %>
@@ -17,8 +17,8 @@
       <%= f.input :final_date, as: :string, label: "Closing Date:".html_safe, input_html: { class: "datepicker" } %>
     </div>
   </div>
-  <div class="row">
-    <div class="offset-3 col-6">
+  <div class="row d-flex justify-content-center mb-5">
+    <div class="col-md-8">
       <%= f.submit class: "btn btn-primary"%>
     </div>
   </div>
