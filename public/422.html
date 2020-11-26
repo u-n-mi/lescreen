@@ -1,87 +1,94 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Rejected (e-422)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto&display=swap" rel="stylesheet">
-  <style>
-body {
-  width: 100%;
-  height: 100%;
-  background: #000;
-  overflow: hidden;
-}
-.fade {
-  position: relative;
-  width: 100%;
-  min-height: 60vh;
-  top: -25px;
-  background-image: linear-gradient(0deg, transparent, black 75%);
-  z-index: 1;
-}
-.ode {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  height: 800px;
-  color: #feda4a;
-  font-family: 'Audiowide', cursive;
-  font-size: 500%;
-  font-weight: 600;
-  letter-spacing: 6px;
-  line-height: 150%;
-  perspective: 400px;
-  text-align: justify;
-}
-.crawl {
-  position: relative;
-  top: 9999px;
-  transform-origin: 50% 100%;
-  animation: crawl 60s linear;
-}
-.crawl > .title {
-  font-size: 90%;
-  text-align: center;
-}
-.crawl > .title h1 {
-  margin: 0 0 100px;
-  text-transform: uppercase;
-}
-@keyframes crawl {
-  0% {
-    top: 0;
-    transform: rotateX(20deg)  translateZ(0);
-  }
-  100% { 
-    top: -6000px;
-    transform: rotateX(25deg) translateZ(-2500px);
-  }
-}
-  </style>
+    <title>Rejected (e-422)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        .fade {
+            position: relative;
+            width: 100%;
+            min-height: 60vh;
+            top: -25px;
+            background-image: linear-gradient(0deg, transparent, black 75%);
+            z-index: 1;
+        }
+        
+        .ode {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            height: 800px;
+            color: #feda4a;
+            font-family: 'Audiowide', cursive;
+            font-size: 500%;
+            font-weight: 600;
+            letter-spacing: 6px;
+            line-height: 150%;
+            perspective: 400px;
+            text-align: justify;
+        }
+        
+        .crawl {
+            position: relative;
+            top: 9999px;
+            transform-origin: 50% 100%;
+            animation: crawl 60s linear;
+        }
+        
+        .crawl>.title {
+            font-size: 90%;
+            text-align: center;
+        }
+        
+        .crawl>.title h1 {
+            margin: 0 0 100px;
+            text-transform: uppercase;
+        }
+        
+        @keyframes crawl {
+            0% {
+                top: 0;
+                transform: rotateX(20deg) translateZ(0);
+            }
+            100% {
+                top: -6000px;
+                transform: rotateX(25deg) translateZ(-2500px);
+            }
+        }
+    </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/422.html -->
-  <div class="fade"></div>
-  <section class="ode">
+
+<!-- This file lives in public/422.html -->
+<div class="fade"></div>
+<section class="ode">
     <div class="crawl">
-      <div class="title">
-        <p>Episode V</p>
-        <h1>The Empire strikes Back</h1>
-      </div>
-      <p>It is a period of civil war. Rebel scum...oops wrong story! But it was the best one though!</p>
-      <p>Let's start again</p>
-      <div class="title">
-        <p>Unprocessable Entity</p>
-        <h1>Error 422</h1>
-      </div>
-      <p>The change you wanted was rejected to destroy the DEATH STAR.</p>
-      <p>If you are the application owner check the logs for more information, or join us!</p>
-      <p>Always remember...</p>
-      <br>
-      <p>I am your daddy!</p>
+        <div class="title">
+            <p>Episode V</p>
+            <h1>The Empire strikes Back</h1>
+        </div>
+        <p>It is a period of civil war. Rebel scum...oops wrong story! But it was the best one though!</p>
+        <p>Let's start again</p>
+        <div class="title">
+            <p>Unprocessable Entity</p>
+            <h1>Error 422</h1>
+        </div>
+        <p>The change you wanted was rejected to destroy the DEATH STAR.</p>
+        <p>If you are the application owner check the logs for more information, or join us!</p>
+        <p>Always remember...</p>
+        <br>
+        <p>I am your daddy!</p>
     </div>
-  </section>
-</body>
+</section>
+
 </html>
