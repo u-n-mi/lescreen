@@ -26,11 +26,6 @@
 
   <!-- <body data-scrollbar-auto-hide="n" class="hold-transition sidebar-mini layout-fixed"> -->
   <body>
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %>">
-        <%= value %>
-      </div>
-    <% end %>
       <div class="wrapper">
         <%= render "base/header" %>
         <%= render "base/sidebar" %>
