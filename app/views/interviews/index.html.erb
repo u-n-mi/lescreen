@@ -1,34 +1,30 @@
-<div class="row">
-  <div class="row h1">
-  <h1>Your Campaigns</h1>
-  </div>
-  <div class="row">
+<div class="d-flex justify-content-between pt-2 pb-2">
+  <h1>Your Interviews - <%= Interview.count %></h1>
+  <span>
     <%= link_to "Create New", new_interview_path, class: "btn btn-primary btn-lg" %>
-  </div>
+  </span>
 </div>
 
+
+<div class="flex-container3">
 <% @interviews.order("final_date").each do |interview| %>
-<div class="courses-container">
-<div class="course">
-  <div class="course-preview">
-    <% if interview.photo.attached? %>
-      <%= cl_image_tag interview.photo.key, crop: :fill %>
-    <% else %>
-      <h6><%= interview.company %></h6>
-    <% end %>
-  </div>
-  <div class="course-info">
-    <div class="progress-container">
-      <div class="progress">
-      </div>
-      <span class="progress-text">6/9</span>
+  <div class="card-product2">
+      <% if interview.photo.attached? %>
+        <%= cl_image_tag interview.photo.key, crop: :fill %>
+      <% else %>
+        <h6><%= interview.company %></h6>
+      <% end %>
+     <%= link_to interview_videos_path(interview) do %>
+    <div class="card-product-infos">
+      <h2><%= interview.name %></h2>
+      <p><%= interview.company %> = <strong><%= interview.days_remaining %> days</strong> left.</p>
     </div>
-    <h6><%= interview.company %> | <%= interview.name %></h6><br>
-    <h4><strong><%= interview.days_remaining %> days</strong> left.</h4>
-    <button class="btn-video"><%= link_to interview_videos_path(interview) do %>Check</button>
     <% end %>
   </div>
+  <% end %>
 </div>
-</div>
-<% end %>
+
+
+
+
 

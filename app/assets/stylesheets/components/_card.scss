@@ -79,6 +79,9 @@
     transition: all 0.3s;
     text-decoration: none;
     margin-bottom: 10px;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 15px;
 }
 
 .card-product2:hover {
@@ -96,6 +99,7 @@
     font-size: 16px;
     font-weight: bold;
     margin: 0;
+    color: black;
 }
 
 .card-product2 p {
@@ -104,10 +108,11 @@
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
+    color: black;
 }
 
 .card-product2:hover p {
-    color: var(--text-color-hover);
+    color: black(--text-color-hover);
 }
 
 .card-product2 .card-product-infos {
