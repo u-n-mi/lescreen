@@ -2,9 +2,8 @@
 <!-- Videos-->
 
 <div class="d-flex justify-content-between pt-2 pb-2">
-  <h1>Campaign Videos - <%= Video.count %></h1>
+  <h1> <%= @interview.company %> | <%= @interview.name %> | Videos - <%= @interview.videos.count %></h1>
   <div>
-    <h4>Delete campaign</h4>
     <span>
       <%= link_to interview_path(@interview), class: "btn btn-primary btn-lg", method: :delete, data: { confirm: "Are you sure you want to delete?" } do %>
         <i class="fa fa-trash" aria-hidden="true"></i>
@@ -16,7 +15,6 @@
 
 <section class="page-section" id="videos">
   <div class="container">
-    <h2 class="text-center mt-0">RATING</h2>
     <hr class="divider my-4" />
     <div class="row">
       <% @interview.videos.each do |video| %>

@@ -90,11 +90,11 @@
                             <% if video.interview.photo.attached? %>
                               <%= cl_image_tag interview.photo.key, crop: :fill %>
                             <% else %>
-                              <h6><%= video.interview.company %></h6>
+                              <h6><%= video.interview.company if video.interview %></h6>
                             <% end %>
                             <div class="card-product-infos">
                                 <h2><strong><%= video.name %></strong></h2>
-                                <p> <%= video.interview.company %> : <%= video.interview.name %> </p>
+                                <p> <%= video.interview.company if video.interview %> : <%= video.interview.name if video.interview %> </p>
                             </div>
                           </div><hr>
                         <% end %>
