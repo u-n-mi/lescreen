@@ -85,19 +85,13 @@
                         <h3 class="card-title">Latest videos submitted</h3>
                     </div>
                     <tbody>
-                        <% Video.all.each do |video| %>
                           <div class="card-product">
-                            <% if video.interview.photo.attached? %>
-                              <%= cl_image_tag interview.photo.key, crop: :fill %>
-                            <% else %>
-                              <h6><%= video.interview.company if video.interview %></h6>
-                            <% end %>
-                            <div class="card-product-infos">
-                                <h2><strong><%= video.name %></strong></h2>
-                                <p> <%= video.interview.company if video.interview %> : <%= video.interview.name if video.interview %> </p>
-                            </div>
-                          </div><hr>
-                        <% end %>
+                              <h6>Data Stealer | Facebook</h6>
+                              <div class="card-product-infos">
+                                <h2><strong>Dark Zuckerburg</strong></h2>
+                                <p> Received 2 hours ago </p>
+                              </div>
+                            </div><hr>
                     </tbody>
                 </div>
             </section>
@@ -143,7 +137,7 @@
                                 </tr>
                                 <tr>
                                     <td>3.</td>
-                                    <td>Chocolate Taster</td>
+                                    <td>Cat Model</td>
                                     <td>
                                         <div class="progress progress-xs">
                                             <div class="progress-bar bg-primary" style="width: 30%"></div>
